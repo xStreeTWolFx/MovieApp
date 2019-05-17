@@ -12,25 +12,25 @@ Además de la cuadrícula mencionada anteriormente, también existe otra cuad
 
 Tanto la cuadrícula que contiene las mejores películas como la cuadrícula quecontiene las películas marcadas como favoritas, pueden ser ordenadas por loscriterios listados a continuación: 
 
-•	Nombre
-•	Año de publicación
-•	Calificación (predeterminado) 
+-	Nombre
+-	Año de publicación
+-	Calificación (predeterminado) 
 
 Al seleccionar una película, el detalle de la misma es presentado. Este detalleconsiste de: 
 
-•	Título
-•	Sipnosis
-•	Póster
-•	Calificación
-•	Indicador de favorita (puede ser presionado para agregarla o removerla de dicha cuadrícula)
+-	Título
+-	Sipnosis
+-	Póster
+-	Calificación
+-	Indicador de favorita (puede ser presionado para agregarla o removerla de dicha cuadrícula)
 
 ## Reglas 
 
-•	Use la plataforma móvil en la que se sienta más confortable.
-•	No haga uso de ningún framework, un buen desarrollador debe saber seleccionar sus herramientas y ponerlas a funcionar en conjunto.
-•	El uso de librerías de terceros es permitido y alentado.
-•	Haga uso de .gitignore, evite al máximo incluir archivos innecesarios.
-•	Debe usar The Movie DB (https://www.themoviedb.org/documentation/api?language=en) como fuente externa de datos. 
+-	Use la plataforma móvil en la que se sienta más confortable.
+-	No haga uso de ningún framework, un buen desarrollador debe saber seleccionar sus herramientas y ponerlas a funcionar en conjunto.
+-	El uso de librerías de terceros es permitido y alentado.
+-	Haga uso de .gitignore, evite al máximo incluir archivos innecesarios.
+-	Debe usar The Movie DB (https://www.themoviedb.org/documentation/api?language=en) como fuente externa de datos. 
 
 ## Criterios de Evaluación 
 
