@@ -35,7 +35,7 @@ public class MovieRecycleAdapter extends RecyclerView.Adapter<MovieRecycleAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Movie movie = movieList.get(position);
-        Picasso.get().load(movie.getPoster()).resize(400,400).placeholder(R.drawable.ic_star).centerInside()
+        Picasso.get().load(movie.getPosterPath()).resize(400,400).placeholder(R.drawable.ic_star).centerInside()
                 .error(R.drawable.ic_launcher_foreground).into(holder.movieImage);
     }
 
