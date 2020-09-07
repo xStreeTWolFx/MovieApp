@@ -1,20 +1,45 @@
 package com.example.pelinabeer.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
+
+@Entity(tableName = "movie")
 public class Movie {
 
+    @PrimaryKey
+    private int id;
     private String title;
     private String overview;
     private Date releaseDate;
-    private String poster;
+    private String posterPath;
+    private Double voteAverage;
 
-    public String getPoster() {
-        return poster;
+    public Movie(int id, String title, String overview, Date releaseDate, String posterPath, Double voteAverage) {
+        this.id = id;
+        this.title = title;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
+        this.posterPath = posterPath;
+        this.voteAverage = voteAverage;
     }
 
-    public void setPoster(String poster) {
-        this.poster = poster;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
     public String getTitle() {
@@ -41,10 +66,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public Movie(String title, String overview, Date releaseDate, String poster) {
-        this.title = title;
-        this.overview = overview;
-        this.releaseDate = releaseDate;
-        this.poster = poster;
+    public Double getVoteAverage() {
+        return voteAverage;
+    }
+
+    public void setVoteAverage(Double voteAverage) {
+        this.voteAverage = voteAverage;
     }
 }
