@@ -12,14 +12,11 @@ import com.example.pelinabeer.R;
 import com.example.pelinabeer.models.Movie;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MovieRecycleAdapter extends RecyclerView.Adapter<MovieRecycleAdapter.ViewHolder> {
-    List<Movie> movieList;
-
-    public MovieRecycleAdapter(List<Movie> movieList) {
-        this.movieList = movieList;
-    }
+    List<Movie> movieList = new ArrayList<>();
 
     public void setMovieList(List<Movie> movieList) {
         this.movieList = movieList;
@@ -35,7 +32,7 @@ public class MovieRecycleAdapter extends RecyclerView.Adapter<MovieRecycleAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Movie movie = movieList.get(position);
-        Picasso.get().load(movie.getPosterPath()).resize(400,400).placeholder(R.drawable.ic_star).centerInside()
+        Picasso.get().load(movie.getPosterPath()).resize(400, 400).placeholder(R.drawable.ic_star).centerInside()
                 .error(R.drawable.ic_launcher_foreground).into(holder.movieImage);
     }
 
