@@ -13,11 +13,11 @@ public class Movie {
     private int id;
     private String title;
     private String overview;
-    private Date releaseDate;
+    private Long releaseDate;
     private String posterPath;
     private Double voteAverage;
 
-    public Movie(int id, String title, String overview, Date releaseDate, String posterPath, Double voteAverage) {
+    public Movie(int id, String title, String overview, Long releaseDate, String posterPath, Double voteAverage) {
         this.id = id;
         this.title = title;
         this.overview = overview;
@@ -58,11 +58,11 @@ public class Movie {
         this.overview = overview;
     }
 
-    public Date getReleaseDate() {
+    public Long getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(Long releaseDate) {
         this.releaseDate = releaseDate;
     }
 
