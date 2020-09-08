@@ -1,21 +1,22 @@
 package com.example.pelinabeer.ui.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.pelinabeer.R;
 import com.example.pelinabeer.adapters.MovieRecycleAdapter;
 import com.example.pelinabeer.models.Movie;
+import com.example.pelinabeer.viewModel.MovieViewModel;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.util.List;
 
 
 public class MovieListFragment extends Fragment {
@@ -23,9 +24,7 @@ public class MovieListFragment extends Fragment {
     private RecyclerView recyclerView;
     private MovieRecycleAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    Movie movie = new Movie("", "", new Date(), "https://freesvg.org/img/1547626868.png");
-    Movie movie2 = new Movie("", "", new Date(), "https://image.tmdb.org/t/p/w500/uOw5JD8IlD546feZ6oxbIjvN66P.jpg");
+    private MovieViewModel viewModel;
 
     public MovieListFragment() {
         // Required empty public constructor
@@ -46,11 +45,18 @@ public class MovieListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_movie_list, container, false);
-        adapter = new MovieRecycleAdapter(Arrays.asList(movie, movie2, movie, movie2, movie2, movie, movie, movie2));
+        adapter = new MovieRecycleAdapter();
         layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView = view.findViewById(R.id.recycle_view_movie);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        viewModel = new ViewModelProvider(this).get(MovieViewModel.class);
+        viewModel.getMovies().observe(getViewLifecycleOwner(), new Observer<List<Movie>>() {
+            @Override
+            public void onChanged(List<Movie> movies) {
+                adapter.setMovieList(movies);
+            }
+        });
         return view;
     }
 }
